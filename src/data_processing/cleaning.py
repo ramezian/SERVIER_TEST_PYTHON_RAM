@@ -4,18 +4,17 @@ import re
 
 def clean_json_file(input_path: str, output_path: str) -> None:
     
-    # Nettoie un fichier JSON pour corriger les erreurs de format courantes,
-    # supprime les objets avec des champs "id" vides, et sauvegarde le fichier nettoyé.
+    
     
     try:
-        # Tente de charger le fichier JSON pour vérifier s'il est valide
+       
         with open(input_path, 'r') as file:
             data = json.load(file)
         
-        # Filtrer les éléments avec un champ "id" vide
+        
         cleaned_data = [item for item in data if item.get("id") != ""]
 
-        # Sauvegarder le JSON nettoyé sans les éléments "id" vides
+        
         with open(output_path, 'w') as file:
             json.dump(cleaned_data, file, indent=4)
         
