@@ -105,7 +105,7 @@ poetry run pytest -vv tests/
 
 Build docker Image
 ```bash
-docker build -t servier-test-python-ramlatest -f 
+docker build -t servier-test-python-ram:latest -f 
  ```
 This setup will execute the code inside the container.
 ```bash
