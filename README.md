@@ -160,14 +160,14 @@ To scale the code for Big Data (millions of rows, terabytes of data), there are 
 
 1. Use pySpark instead of pandas to enable distributed computation:
 
- - Adapting the code should be relatively simple due to the syntax similarities between pandas and pySpark.
- - The code should run on a virtual machine with sufficient resources (CPU, GPU, memory) to handle the workload.
+   - Adapting the code should be relatively simple due to the syntax similarities between pandas and pySpark.
+   - The code should run on a virtual machine with sufficient resources (CPU, GPU, memory) to handle the workload.
 
 2. Alternatively, load the data into BigQuery and perform ETL transformations using SQL:
 
- - Store input files in Google Cloud Storage for seamless ingestion into BigQuery.
- - Use SQL transformations orchestrated within a version-controlled dbt project to manage and automate the process.
- - Output files should be saved to Google Cloud Storage, with lifecycle policies set up to prevent accidental data loss.
+   - Store input files in Google Cloud Storage for seamless ingestion into BigQuery.
+   - Use SQL transformations orchestrated within a version-controlled dbt project to manage and automate the process.
+   - Output files should be saved to Google Cloud Storage, with lifecycle policies set up to prevent accidental data loss.
 
 
  # Part 2 - SQL 
