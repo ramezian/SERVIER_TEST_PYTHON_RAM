@@ -103,7 +103,7 @@ Unit Test
 poetry run pytest -vv tests/
  ```
 
-Buile docker Image
+Build docker Image
 ```bash
 docker build -t servier-test-python-ramlatest -f 
  ```
