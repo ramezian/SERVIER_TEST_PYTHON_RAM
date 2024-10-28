@@ -175,7 +175,7 @@ To scale the code for Big Data (millions of rows, terabytes of data), there are 
 - Before we start, here is a list of hypothesis that I infered before solving the problems :
     - The tables are inside a dataset called `test_servier`
     - We will be using BigQuery's SQL notation
-    - Since we are using BigQuery, then we assuume that the date will automatically be fixed and converted to %Y-%m-%d instead of %d/%m/%Y, so no need to use `FORMAT_DATE()` or `PARSE_DATE()` functions
+    - Since we are using BigQuery, then we assume that the date will automatically be fixed and converted to %Y-%m-%d instead of %d/%m/%Y, so no need to use `FORMAT_DATE()` or `PARSE_DATE()` functions
 
 - Query 1 : Daily sales between January 1st 2019 and December 31st 2019 
 ```sql
