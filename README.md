@@ -129,30 +129,30 @@ To optimize the production pipeline setup, consider these improvements:
 Orchestration with Cloud Composer
 To manage and schedule the execution of this pipeline in production, Google Cloud Composer (built on Apache Airflow) is used for orchestration.
 
-- Cloud Composer Integration Steps:
+Cloud Composer Integration Steps:
 
 1.  Define the DAG (Directed Acyclic Graph) :
 
-   - Create a DAG file in Airflow to define the pipeline tasks.
-   - Each task (e.g., data extraction, transformation) is represented as a Python function or script to be called with Airflow operators (PythonOperator, BashOperator).
+    - Create a DAG file in Airflow to define the pipeline tasks.
+    - Each task (e.g., data extraction, transformation) is represented as a Python function or script to be called with Airflow operators (PythonOperator, BashOperator).
 
 2.  Environment Setup:
 
- - In Google Cloud Console, create a Cloud Composer environment with the required resources and configurations (e.g., machine type, disk space).
+    - In Google Cloud Console, create a Cloud Composer environment with the required resources and configurations (e.g., machine type, disk space).
 
 3. Upload DAG File:
 
- - Place the DAG file in the Cloud Composer dags/ folder to activate it.
+   - Place the DAG file in the Cloud Composer dags/ folder to activate it.
 
   4. Environment Variables:
 
-   - Set environment variables within the Cloud Composer environment for each pipeline stage (e.g., API_KEY, DB_CONNECTION_STRING).
+     - Set environment variables within the Cloud Composer environment for each pipeline stage (e.g., API_KEY, DB_CONNECTION_STRING).
 
  5. Trigger and Monitor DAG:
 
-   - Use the Airflow UI to trigger the DAG manually or set up a schedule for periodic execution.
+    - Use the Airflow UI to trigger the DAG manually or set up a schedule for periodic execution.
 
-   - Monitor task progress, check logs, and troubleshoot any issues directly from the Airflow UI.
+    - Monitor task progress, check logs, and troubleshoot any issues directly from the Airflow UI.
 
 ## How to adapt the code for Big Data
 
