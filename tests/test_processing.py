@@ -8,4 +8,4 @@ def test_build_drug_mentions_graph():
     
     graph = build_drug_mentions_graph(drugs_df, pubmed_df, clinical_trials_df)
     assert 'Aspirin' in graph
-    assert len(graph['Aspirin']) == 2  # Vérifier que les deux mentions sont trouvées
+    assert len(graph['Aspirin']) == 2  

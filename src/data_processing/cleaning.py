@@ -3,10 +3,10 @@ import json
 import re
 
 def clean_json_file(input_path: str, output_path: str) -> None:
-    """
-    Nettoie un fichier JSON pour corriger les erreurs de format courantes,
-    supprime les objets avec des champs "id" vides, et sauvegarde le fichier nettoyé.
-    """
+    
+    # Nettoie un fichier JSON pour corriger les erreurs de format courantes,
+    # supprime les objets avec des champs "id" vides, et sauvegarde le fichier nettoyé.
+    
     try:
         # Tente de charger le fichier JSON pour vérifier s'il est valide
         with open(input_path, 'r') as file:
@@ -56,7 +56,7 @@ def clean_json_file(input_path: str, output_path: str) -> None:
 def standardize_date_format(df, date_column_name):
     # Convertir les dates, gérer les erreurs et formater explicitement en `YYYY-MM-DD`
     df[date_column_name] = pd.to_datetime(df[date_column_name], errors='coerce').dt.strftime('%Y-%m-%d')
-    df[date_column_name] = df[date_column_name].replace("NaT", "")  # Remplacer NaT par une chaîne vide
+    df[date_column_name] = df[date_column_name].replace("NaT", "")  
     return df
 def convert_id_to_string(df, id_column_name):
     df[id_column_name] = df[id_column_name].astype(str)
@@ -82,20 +82,12 @@ def remove_rows_with_empty_titles_or_journals(df, title_column_name, journal_col
     return df.dropna(subset=[title_column_name, journal_column_name])
 
 def remove_duplicate_ids_and_reindex(df, id_column_name):
-    """
-    Supprime les doublons dans le DataFrame en se basant sur la colonne `id_column_name`
-    et réinitialise l'index sans supprimer la colonne.
-    """
-    return df.drop_duplicates(subset=[id_column_name]).reset_index(drop=True)
+       return df.drop_duplicates(subset=[id_column_name]).reset_index(drop=True)
 
 def remove_rows_with_empty_id(df, id_column_name):
-    """
-    Supprime les lignes où la colonne `id` est vide ou contient une valeur manquante (NaN).
-    """
+    
     return df.dropna(subset=[id_column_name])
 
 def replace_nan_with_empty_string(df):
-    """
-    Remplace toutes les valeurs NaN dans le DataFrame par des chaînes vides.
-    """
+    
     return df.fillna("")
